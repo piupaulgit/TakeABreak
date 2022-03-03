@@ -1,0 +1,23 @@
+{
+  "name": "takeabreak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piupaulgit/TakeABreak.git"
+  },
+  "author": "piupaul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piupaulgit/TakeABreak/issues"
+  },
+  "homepage": "https://github.com/piupaulgit/TakeABreak#readme",
+  "devDependencies": {
+    "electron": "^17.1.0"
+  }
+}
