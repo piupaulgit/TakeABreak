@@ -1,15 +1,32 @@
+const { Menu } = require('electron');
 const electron = require('electron');
-
 
 const {app, BrowserWindow} = electron;
 
-let mainWindow;
+const createWindow = () => {
+    const win = new BrowserWindow({
+      width: 800,
+      height: 600
+    })
+    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
+    Menu.setApplicationMenu(mainMenu)
+    win.loadFile('index.html')
 
-app.on('ready', () => {
-    mainWindow = new BrowserWindow({});
-    mainWindow.loadURL(url.format({
-        pathName: path.join(__dirname,'mainWindow.html'),
-        protocol:'file',
-        slashes: true
-    }))
-})
+  }
+
+
+//  create menu options
+
+const mainMenuTemplate = [
+  {
+    label: 'File'
+  }
+]
+
+  app.whenReady().then(() => {
+    createWindow()
+  })
+
+  app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') app.quit()
+  })
